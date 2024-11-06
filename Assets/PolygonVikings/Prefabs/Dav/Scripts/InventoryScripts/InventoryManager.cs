@@ -1,4 +1,4 @@
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
@@ -12,22 +12,23 @@ public class InventoryManager : MonoBehaviour
     private Camera mainCamera;
     public GameObject currentWeapon;
 
-
     public List<InventorySlot> slots = new List<InventorySlot>();
     public bool isOpened;
     private float reachDistance = 4f;
     GameObject pickUp;
+
     private void Awake()
     {
         UIBG.SetActive(true);
         inventoryPanel.gameObject.SetActive(false);
     }
+
     void Start()
     {
         mainCamera = Camera.main;
-        for (int i = 0; i < inventoryPanel.childCount; i++)//nr de copii la obiecte
+        for (int i = 0; i < inventoryPanel.childCount; i++)
         {
-            if (inventoryPanel.GetChild(i).GetComponent<InventorySlot>() != null)//verificam daca la slot este componentul InventorySlot
+            if (inventoryPanel.GetChild(i).GetComponent<InventorySlot>() != null)
             {
                 slots.Add(inventoryPanel.GetChild(i).GetComponent<InventorySlot>());
             }
@@ -35,7 +36,6 @@ public class InventoryManager : MonoBehaviour
         UIBG.SetActive(false);
     }
 
-    // Update is called once per frame
     void Update()
     {
         if (Input.GetKeyDown(KeyCode.I))
@@ -43,28 +43,21 @@ public class InventoryManager : MonoBehaviour
             isOpened = !isOpened;
             if (isOpened)
             {
-                Debug.Log("Is opened");
                 UIBG.SetActive(true);
                 inventoryPanel.gameObject.SetActive(true);
                 Cursor.lockState = CursorLockMode.None;
                 Cursor.visible = true;
-
                 Dot.SetActive(false);
-                //PlayerController.GetComponent<Rotate>().enabled = true;
                 mainCamera.GetComponent<CameraController>().enabled = false;
             }
             else
             {
                 UIBG.SetActive(false);
                 inventoryPanel.gameObject.SetActive(false);
-
                 Cursor.lockState = CursorLockMode.Locked;
                 Cursor.visible = false;
-
                 Dot.SetActive(true);
                 mainCamera.GetComponent<CameraController>().enabled = true;
-
-                //PlayerController.GetComponent<Rotate>().enabled = true;
             }
         }
 
@@ -74,68 +67,58 @@ public class InventoryManager : MonoBehaviour
         }
     }
 
+    // Metoda pentru a verifica dacă inventarul este plin
+    private bool IsInventoryFull()
+    {
+        foreach (InventorySlot slot in slots)
+        {
+            if (slot.isEmpty) // Dacă există un slot gol, inventarul nu este plin
+            {
+                return false;
+            }
+        }
+        return true; // Toate sloturile sunt ocupate
+    }
+
     public void PickUp()
     {
+        if (IsInventoryFull())
+        {
+            Debug.Log("Inventarul este plin! Nu mai poți lua obiecte.");
+            return; // Oprește procesul de adăugare a obiectului
+        }
+
         Ray ray = mainCamera.ScreenPointToRay(Input.mousePosition);
         RaycastHit hit;
         if (Physics.Raycast(ray, out hit, reachDistance))
         {
-            if (hit.collider.gameObject.GetComponent<Item>() != null)//verific daca in directia ceea este un Item si il adaug in invent
+            Item itemComponent = hit.collider.gameObject.GetComponent<Item>();
+            if (itemComponent != null)
             {
-                if (hit.collider.gameObject.GetComponent<Item>().item.isConsumeable)
-                {
-                    Debug.Log("Pickedup consumeable item");
-                    AddItem(hit.collider.gameObject.GetComponent<Item>().item, hit.collider.gameObject.GetComponent<Item>().amount);
-
-                    Destroy(hit.collider.gameObject);
-                }
-                else if (hit.collider.gameObject.GetComponent<Item>().item.isConsumeable == false)
-                {
-                    Debug.Log("Pickedup no consumeable item");
-                    AddItem(hit.collider.gameObject.GetComponent<Item>().item, hit.collider.gameObject.GetComponent<Item>().amount);
-                    Destroy(hit.collider.gameObject);
-
-                }
+                AddItem(itemComponent.item, itemComponent.amount);
+                Destroy(hit.collider.gameObject);
             }
         }
     }
-
-    private void PickUpWeapon(RaycastHit hit)
-    {
-
-
-        //punem arma in mana
-        currentWeapon = hit.transform.gameObject;
-        currentWeapon.GetComponent<Rigidbody>().isKinematic = true;
-        currentWeapon.transform.parent = transform;
-        currentWeapon.transform.localPosition = new Vector3(0, 180f, 0f);
-        currentWeapon.transform.localEulerAngles = new Vector3(0, 180f, 0f);
-        currentWeapon.GetComponent<Collider>().enabled = false;
-        // currentWeapon.GetComponent<GunFire>().enabled = true;
-        Destroy(hit.collider.gameObject);
-
-    }
-
-
 
     private void AddItem(ItemScriptableObject _item, int _amount)
     {
-        foreach (InventorySlot slot in slots)//trecem prin fiecare slot din List de slots
+        foreach (InventorySlot slot in slots)
         {
-            if (slot.item == _item) //verific daca item se poate de luat
+            if (slot.item == _item)
             {
                 if (slot.amount + _amount <= _item.maximumAmount)
                 {
-                    slot.amount += _amount; // daca sa putut lua atunci se adauga in invent
+                    slot.amount += _amount;
                     slot.itemAmountText.text = slot.amount.ToString();
                     return;
                 }
-                continue;
             }
         }
+
         foreach (InventorySlot slot in slots)
         {
-            if (slot.isEmpty == true)
+            if (slot.isEmpty)
             {
                 slot.item = _item;
                 slot.amount = _amount;
