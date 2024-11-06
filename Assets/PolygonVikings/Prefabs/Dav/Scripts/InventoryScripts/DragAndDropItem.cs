@@ -68,6 +68,8 @@ public class DragAndDropItem : MonoBehaviour, IPointerDownHandler, IPointerUpHan
         {
             ExchangeSlotData(eventData.pointerCurrentRaycast.gameObject.transform.parent.parent.GetComponent<InventorySlot>());
         }
+        ArmorMiniInventory.instance.CheckArmorSlots();
+        MiniInventory.Instance.CheckItemHand();
     }
 
     private void UseConsumableItem()

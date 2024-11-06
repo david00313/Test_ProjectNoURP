@@ -93,6 +93,8 @@ public class InventoryManager : MonoBehaviour
                 {
                     Debug.Log("Pickedup no consumeable item");
                     AddItem(hit.collider.gameObject.GetComponent<Item>().item, hit.collider.gameObject.GetComponent<Item>().amount);
+                    Destroy(hit.collider.gameObject);
+
                 }
             }
         }

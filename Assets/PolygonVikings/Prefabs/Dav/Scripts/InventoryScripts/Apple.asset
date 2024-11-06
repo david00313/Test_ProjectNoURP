@@ -16,6 +16,11 @@ MonoBehaviour:
   itemPrefab: {fileID: 8539207391201216961, guid: f0de27b4a881fd54a80fb3408cb47f33, type: 3}
   icon: {fileID: 21300000, guid: 595df4139623e93498e02108674ff1f0, type: 3}
   itemType: 1
+  armorType: 0
   maximumAmount: 2
   itemDescription: 
+  isConsumeable: 1
+  changeHealth: 10
+  changeHunger: 0
+  changeThirst: 0
   healAmount: 0

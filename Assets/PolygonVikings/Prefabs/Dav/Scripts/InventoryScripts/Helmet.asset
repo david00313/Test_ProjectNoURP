@@ -10,12 +10,12 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 70c5cd23cb17eea4eb5fb36cd8a7edf1, type: 3}
-  m_Name: Axe
+  m_Name: Helmet
   m_EditorClassIdentifier: 
-  itemName: Axe
-  itemPrefab: {fileID: 1395031847115657938, guid: 25e386ca8f449354ab8e132f675f0b0d, type: 3}
-  icon: {fileID: 21300000, guid: acc8126f77ea3fb44a95f7cb68e94a0f, type: 3}
-  itemType: 3
+  itemName: Helmet
+  itemPrefab: {fileID: 6946183650578470785, guid: 0d5ea6f0b39923e44877248a0f8f1527, type: 3}
+  icon: {fileID: 10915, guid: 0000000000000000f000000000000000, type: 0}
+  itemType: 5
   armorType: 0
   maximumAmount: 1
   itemDescription: 
