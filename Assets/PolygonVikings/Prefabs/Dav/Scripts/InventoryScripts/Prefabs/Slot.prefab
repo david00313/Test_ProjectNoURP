@@ -60,14 +60,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.7264151, g: 0.18845676, b: 0.18845676, a: 0.7647059}
+  m_Color: {r: 0.3018868, g: 0.2976148, b: 0.2976148, a: 0.7647059}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 0}
+  m_Sprite: {fileID: 21300000, guid: 29a506da911beaf4799a869d005ed4d7, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -279,8 +279,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d6000f3ef592dfc4bbffcdc4cd2d360a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  canvas: {fileID: 0}
   oldSlot: {fileID: 0}
-  player: {fileID: 0}
 --- !u!114 &121779225614763412
 MonoBehaviour:
   m_ObjectHideFlags: 0
