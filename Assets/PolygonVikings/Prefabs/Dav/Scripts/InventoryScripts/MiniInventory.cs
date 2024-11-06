@@ -46,8 +46,11 @@ public class MiniInventory : MonoBehaviour
             }
 
             // Creează obiectul din miniinventar și îl plasează în mână
-            currentItemInHand = Instantiate(slot.item.itemPrefab, handPosition.position, Quaternion.identity);
+            currentItemInHand = Instantiate(slot.item.itemPrefab, handPosition.position, slot.item.itemPrefab.transform.rotation);
             currentItemInHand.transform.SetParent(handPosition); // Poziționează-l în mână
+            currentItemInHand.transform.localRotation = slot.item.itemPrefab.transform.localRotation;
+
+
         }
         else
         {

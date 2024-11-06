@@ -48,7 +48,7 @@ public class InventoryManager : MonoBehaviour
                 Cursor.lockState = CursorLockMode.None;
                 Cursor.visible = true;
                 Dot.SetActive(false);
-                mainCamera.GetComponent<CameraController>().enabled = false;
+                //mainCamera.GetComponent<CameraController>().enabled = false;
             }
             else
             {
@@ -57,7 +57,7 @@ public class InventoryManager : MonoBehaviour
                 Cursor.lockState = CursorLockMode.Locked;
                 Cursor.visible = false;
                 Dot.SetActive(true);
-                mainCamera.GetComponent<CameraController>().enabled = true;
+                //mainCamera.GetComponent<CameraController>().enabled = true;
             }
         }
 
