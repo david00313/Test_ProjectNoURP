@@ -40,6 +40,7 @@ public class DragAndDropItem : MonoBehaviour, IPointerDownHandler, IPointerUpHan
         GetComponentInChildren<Image>().color = new Color(1, 1, 1, 0.9f);
         GetComponentInChildren<Image>().raycastTarget = false;
         transform.SetParent(transform.parent.parent.parent);
+
     }
 
     public void OnPointerUp(PointerEventData eventData)

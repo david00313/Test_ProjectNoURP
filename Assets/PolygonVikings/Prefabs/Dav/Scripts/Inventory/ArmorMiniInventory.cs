@@ -48,8 +48,11 @@ public class ArmorMiniInventory : MonoBehaviour
         if (armorSlot.item != null && armorSlot.item.itemType == ItemType.Armor && armorSlot.item.armorType == expectedType)
         {
             // Dacă armura nu este deja echipată, o instanțiem
-            if (equippedArmor == null)
+            if (equippedArmor == null || equippedArmor.name != armorSlot.item.itemName)
             {
+                Destroy(equippedArmor);
+                equippedArmor = null;  // Setăm referința la null, pentru a indica că nu mai există armură echipată
+
                 equippedArmor = Instantiate(armorSlot.item.itemPrefab, equipPosition.position, equipPosition.rotation); // Utilizăm rotația locației
                 equippedArmor.transform.SetParent(equipPosition); // Poziționează armura sub locația corectă
                 equippedArmor.transform.localPosition = Vector3.zero;  // Trebu să poziționezi armura corect sub locația părintelui
