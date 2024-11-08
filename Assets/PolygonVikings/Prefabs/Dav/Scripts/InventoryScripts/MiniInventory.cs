@@ -50,7 +50,7 @@ public class MiniInventory : MonoBehaviour
             currentItemInHand.transform.SetParent(handPosition); // Poziționează-l în mână
             currentItemInHand.transform.localRotation = slot.item.itemPrefab.transform.localRotation;
 
-
+            PlayerManager.instance.ActivatePlayerInput();
         }
         else
         {
@@ -59,6 +59,8 @@ public class MiniInventory : MonoBehaviour
             {
                 Destroy(currentItemInHand);
                 currentItemInHand = null;
+                PlayerManager.instance.AxeAnimInitDelay();
+
             }
         }
     }

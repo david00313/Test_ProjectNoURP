@@ -24,6 +24,20 @@ public class Indicators : MonoBehaviour
     private void Update()
     {
 
+        if(healthAmount > 0)
+        {
+            VerfiyIndicators();
+        }
+        else
+        {
+            PlayerManager.instance.PlayerDied();
+        }
+
+    }
+
+    private void VerfiyIndicators()
+    {
+
         if (foodAmount > 0)
         {
             foodAmount -= 100 / secondsToEmptyFood * Time.deltaTime;
