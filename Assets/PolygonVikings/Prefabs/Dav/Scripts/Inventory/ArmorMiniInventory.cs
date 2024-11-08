@@ -52,7 +52,10 @@ public class ArmorMiniInventory : MonoBehaviour
             {
                 equippedArmor = Instantiate(armorSlot.item.itemPrefab, equipPosition.position, equipPosition.rotation); // Utilizăm rotația locației
                 equippedArmor.transform.SetParent(equipPosition); // Poziționează armura sub locația corectă
-                equippedArmor.transform.localPosition = Vector3.zero;  // Asigură-te că poziționezi armura corect sub locația părintelui
+                equippedArmor.transform.localPosition = Vector3.zero;  // Trebu să poziționezi armura corect sub locația părintelui
+                equippedArmor.GetComponent<BoxCollider>().enabled = false;
+                equippedArmor.GetComponent<Rigidbody>().isKinematic = true;
+                equippedArmor.GetComponent<Rigidbody>().useGravity = false;
             }
         }
         else

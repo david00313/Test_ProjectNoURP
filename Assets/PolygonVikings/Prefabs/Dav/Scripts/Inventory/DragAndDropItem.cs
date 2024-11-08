@@ -62,6 +62,12 @@ public class DragAndDropItem : MonoBehaviour, IPointerDownHandler, IPointerUpHan
         {
             itemObject = Instantiate(oldSlot.item.itemPrefab, player.position + Vector3.up + player.forward, Quaternion.identity);
             itemObject.GetComponent<Item>().amount = oldSlot.amount;
+            itemObject.GetComponent<Rigidbody>().isKinematic = false;
+            itemObject.GetComponent<Rigidbody>().useGravity = true;
+            itemObject.GetComponent<BoxCollider>().enabled = true;
+            itemObject.GetComponent<BoxCollider>().isTrigger = false;
+
+
             NullifySlotData();
         }
         else if (eventData.pointerCurrentRaycast.gameObject.transform.parent.parent != null && eventData.pointerCurrentRaycast.gameObject.transform.parent.parent.GetComponent<InventorySlot>() != null)

@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &47712181073024318
+--- !u!1 &3243176153602074004
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,49 +8,49 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 3155894181307260023}
-  - component: {fileID: 4999104397662513025}
-  - component: {fileID: 7895903083621233380}
-  - component: {fileID: 8545036877782358264}
-  - component: {fileID: 4478223642896432415}
-  - component: {fileID: 8486702105036167041}
+  - component: {fileID: 3243176153602570676}
+  - component: {fileID: 3243176153599179156}
+  - component: {fileID: 3243176153600146260}
+  - component: {fileID: 9009090227776946704}
+  - component: {fileID: 4660377312098498543}
+  - component: {fileID: 8510431043928528160}
   m_Layer: 0
-  m_Name: Helmet Protector Fire
+  m_Name: Wings Royal Fire
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &3155894181307260023
+--- !u!4 &3243176153602570676
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 47712181073024318}
+  m_GameObject: {fileID: 3243176153602074004}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 219.93773, y: -0.44202876, z: 230.37729}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: -0.00001, y: 0, z: 0}
---- !u!33 &4999104397662513025
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!33 &3243176153599179156
 MeshFilter:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 47712181073024318}
-  m_Mesh: {fileID: 4300000, guid: 7adb4054fbaf51542891f9277b443c9f, type: 3}
---- !u!23 &7895903083621233380
+  m_GameObject: {fileID: 3243176153602074004}
+  m_Mesh: {fileID: 4300000, guid: 381c97108701a2043a6c34bcabd6d8a5, type: 3}
+--- !u!23 &3243176153600146260
 MeshRenderer:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 47712181073024318}
+  m_GameObject: {fileID: 3243176153602074004}
   m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
@@ -86,13 +86,13 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!54 &8545036877782358264
+--- !u!54 &9009090227776946704
 Rigidbody:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 47712181073024318}
+  m_GameObject: {fileID: 3243176153602074004}
   serializedVersion: 4
   m_Mass: 1
   m_Drag: 0
@@ -113,13 +113,13 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!65 &4478223642896432415
+--- !u!65 &4660377312098498543
 BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 47712181073024318}
+  m_GameObject: {fileID: 3243176153602074004}
   m_Material: {fileID: 0}
   m_IncludeLayers:
     serializedVersion: 2
@@ -133,18 +133,18 @@ BoxCollider:
   m_Enabled: 1
   serializedVersion: 3
   m_Size: {x: 0.68073475, y: 0.8165616, z: 0.8777239}
-  m_Center: {x: 0, y: 1.6190939, z: -0.03691408}
---- !u!114 &8486702105036167041
+  m_Center: {x: 0, y: 0.34, z: -0.03691408}
+--- !u!114 &8510431043928528160
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 47712181073024318}
+  m_GameObject: {fileID: 3243176153602074004}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fd571590d357b7345a91568e98748b66, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  item: {fileID: 11400000, guid: 9d225c1b61fc9bc4ab0de3300896037f, type: 2}
+  item: {fileID: 11400000, guid: 0fdad336a5adaac4da453b4f81596591, type: 2}
   amount: 1

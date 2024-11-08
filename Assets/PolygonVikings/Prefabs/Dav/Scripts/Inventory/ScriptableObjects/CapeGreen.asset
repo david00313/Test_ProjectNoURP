@@ -10,13 +10,13 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 70c5cd23cb17eea4eb5fb36cd8a7edf1, type: 3}
-  m_Name: Helmet
+  m_Name: CapeGreen
   m_EditorClassIdentifier: 
-  itemName: Helmet
-  itemPrefab: {fileID: 776615630738826429, guid: 10e3fd62ff5a0334e980b1c6cc099e4f, type: 3}
-  icon: {fileID: 10915, guid: 0000000000000000f000000000000000, type: 0}
+  itemName: CapeGreen
+  itemPrefab: {fileID: 3221544398230706664, guid: a16264ebea1715947ac962de3997ba83, type: 3}
+  icon: {fileID: 21300000, guid: 1735a1feacdc855448d3d954fdecf3b4, type: 3}
   itemType: 5
-  armorType: 0
+  armorType: 1
   maximumAmount: 1
   itemDescription: 
   isConsumeable: 0

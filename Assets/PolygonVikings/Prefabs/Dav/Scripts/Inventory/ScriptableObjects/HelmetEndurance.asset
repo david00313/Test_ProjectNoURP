@@ -1,0 +1,26 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 70c5cd23cb17eea4eb5fb36cd8a7edf1, type: 3}
+  m_Name: HelmetEndurance
+  m_EditorClassIdentifier: 
+  itemName: HelmetEndurance
+  itemPrefab: {fileID: 587600832397860041, guid: ed2a8377535220c43b0d5a7a01872836, type: 3}
+  icon: {fileID: 21300000, guid: ac0ea92de2e62c044b7188ecd7d5321e, type: 3}
+  itemType: 5
+  armorType: 0
+  maximumAmount: 1
+  itemDescription: 
+  isConsumeable: 0
+  changeHealth: 0
+  changeHunger: 0
+  changeThirst: 0
+  healAmount: 0

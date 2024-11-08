@@ -18,7 +18,7 @@ public class InventoryManager : MonoBehaviour
     public GameObject _vMeleeCombatInput;
     public List<InventorySlot> slots = new List<InventorySlot>();
     public bool isOpened;
-    private float reachDistance = 4f;
+    private float reachDistance = 7f;
     GameObject pickUp;
 
 
