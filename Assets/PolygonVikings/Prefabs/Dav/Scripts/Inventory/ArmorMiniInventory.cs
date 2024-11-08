@@ -73,7 +73,6 @@ public class ArmorMiniInventory : MonoBehaviour
     }
 
     // Funcție pentru a adăuga iteme din inventar în sloturile corecte
-    // Funcție pentru a adăuga iteme din inventar în sloturile corecte
     public void OnItemDropped(ItemScriptableObject item, InventorySlot targetSlot)
     {
         if (item != null && item.itemType == ItemType.Armor)

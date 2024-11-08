@@ -95,7 +95,7 @@ public class DragAndDropItem : MonoBehaviour, IPointerDownHandler, IPointerUpHan
         }
 
         ArmorMiniInventory.instance.CheckArmorSlots();
-        MiniInventory.Instance.CheckItemHand();
+        //MiniInventory.Instance.CheckItemHand();
     }
 
     private void UseConsumableItem()
@@ -104,7 +104,8 @@ public class DragAndDropItem : MonoBehaviour, IPointerDownHandler, IPointerUpHan
         {
             // Consumă itemul și crește sănătatea (poți adăuga și alte efecte aici)
             Indicators.healthAmount += oldSlot.item.changeHealth;
-
+            Indicators.foodAmount += oldSlot.item.changeHunger;
+            Indicators.waterAmount += oldSlot.item.changeThirst;
             // Dacă sănătatea depășește 100, setează-o la 100
             if (Indicators.healthAmount > 100)
                 Indicators.healthAmount = 100;
