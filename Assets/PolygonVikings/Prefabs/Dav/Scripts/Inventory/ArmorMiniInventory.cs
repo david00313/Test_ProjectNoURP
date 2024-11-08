@@ -73,10 +73,12 @@ public class ArmorMiniInventory : MonoBehaviour
     }
 
     // Funcție pentru a adăuga iteme din inventar în sloturile corecte
+    // Funcție pentru a adăuga iteme din inventar în sloturile corecte
     public void OnItemDropped(ItemScriptableObject item, InventorySlot targetSlot)
     {
         if (item != null && item.itemType == ItemType.Armor)
         {
+            // Verificăm dacă itemul este de tipul corect pentru slotul țintă
             switch (item.armorType)
             {
                 case ArmorType.Helmet:
@@ -100,7 +102,11 @@ public class ArmorMiniInventory : MonoBehaviour
                         EquipArmorToSlot(pantsSlot, ArmorType.Pants, pantsPosition, ref equippedPants);  // Echipează automat
                     }
                     break;
+                default:
+                    Debug.Log("Itemul nu se potrivește cu niciun slot.");
+                    break;
             }
         }
     }
+
 }

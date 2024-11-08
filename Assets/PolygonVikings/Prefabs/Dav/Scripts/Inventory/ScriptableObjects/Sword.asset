@@ -10,17 +10,17 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 70c5cd23cb17eea4eb5fb36cd8a7edf1, type: 3}
-  m_Name: Apple
+  m_Name: Sword
   m_EditorClassIdentifier: 
-  itemName: Apple
-  itemPrefab: {fileID: 8539207391201216961, guid: f0de27b4a881fd54a80fb3408cb47f33, type: 3}
-  icon: {fileID: 21300000, guid: 595df4139623e93498e02108674ff1f0, type: 3}
-  itemType: 1
+  itemName: Sword
+  itemPrefab: {fileID: 5131920344830540393, guid: 0b684235fff629046b97f092d2cd2260, type: 3}
+  icon: {fileID: 21300000, guid: 37a205b970c16de41a46ac8daa98e15b, type: 3}
+  itemType: 3
   armorType: 3
-  maximumAmount: 5
+  maximumAmount: 1
   itemDescription: 
-  isConsumeable: 1
-  changeHealth: 10
-  changeHunger: 20
+  isConsumeable: 0
+  changeHealth: 0
+  changeHunger: 0
   changeThirst: 0
   healAmount: 0

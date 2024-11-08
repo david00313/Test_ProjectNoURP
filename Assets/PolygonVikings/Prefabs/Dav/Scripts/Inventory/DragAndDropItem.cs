@@ -75,6 +75,25 @@ public class DragAndDropItem : MonoBehaviour, IPointerDownHandler, IPointerUpHan
         {
             ExchangeSlotData(eventData.pointerCurrentRaycast.gameObject.transform.parent.parent.GetComponent<InventorySlot>());
         }
+        else if (eventData.pointerCurrentRaycast.gameObject.transform.parent.parent != null &&
+         eventData.pointerCurrentRaycast.gameObject.transform.parent.parent.GetComponent<InventorySlot>() != null)
+        {
+            InventorySlot targetSlot = eventData.pointerCurrentRaycast.gameObject.transform.parent.parent.GetComponent<InventorySlot>();
+
+            // Check if the target slot is a specific armor slot
+            if (targetSlot == ArmorMiniInventory.instance.helmetSlot && oldSlot.item.armorType == ArmorType.Helmet ||
+                targetSlot == ArmorMiniInventory.instance.chestplateSlot && oldSlot.item.armorType == ArmorType.Chestplate ||
+                targetSlot == ArmorMiniInventory.instance.pantsSlot && oldSlot.item.armorType == ArmorType.Pants)
+            {
+                ExchangeSlotData(targetSlot);  // Move item to the target slot
+                ArmorMiniInventory.instance.CheckArmorSlots();  // Equip item if it’s armor
+            }
+            else
+            {
+                Debug.Log("Itemul nu poate fi plasat în acest slot.");
+            }
+        }
+
         ArmorMiniInventory.instance.CheckArmorSlots();
         MiniInventory.Instance.CheckItemHand();
     }
@@ -111,6 +130,8 @@ public class DragAndDropItem : MonoBehaviour, IPointerDownHandler, IPointerUpHan
         oldSlot.iconGO.GetComponent<Image>().color = new Color(100, 100, 100, 0);
         oldSlot.iconGO.GetComponent<Image>().sprite = null;
         oldSlot.itemAmountText.text = "";
+
+        ArmorMiniInventory.instance.CheckArmorSlots();  // Update equipped armor
     }
 
     void ExchangeSlotData(InventorySlot newSlot)

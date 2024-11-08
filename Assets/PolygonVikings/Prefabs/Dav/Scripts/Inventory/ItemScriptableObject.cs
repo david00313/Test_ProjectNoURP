@@ -7,7 +7,9 @@ public enum ArmorType
 {
     Helmet,
     Chestplate,
-    Pants
+    Pants,
+    NotArmor
+       
 }
 
 public class ItemScriptableObject : ScriptableObject
