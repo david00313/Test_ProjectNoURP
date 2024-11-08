@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using Invector.vCharacterController;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
@@ -8,19 +9,24 @@ public class InventoryManager : MonoBehaviour
     public GameObject UIBG;
     public GameObject PlayerController;
     public GameObject Dot;
+    public Transform globalInventoryPanel;
     public Transform inventoryPanel;
     private Camera mainCamera;
+    public GameObject mainCameraGo;
+    public GameObject inventoryCamera;
     public GameObject currentWeapon;
-
+    public GameObject _vMeleeCombatInput;
     public List<InventorySlot> slots = new List<InventorySlot>();
     public bool isOpened;
     private float reachDistance = 4f;
     GameObject pickUp;
 
+
     private void Awake()
     {
         UIBG.SetActive(true);
         inventoryPanel.gameObject.SetActive(false);
+        globalInventoryPanel.gameObject.SetActive(false);
     }
 
     void Start()
@@ -43,7 +49,12 @@ public class InventoryManager : MonoBehaviour
             isOpened = !isOpened;
             if (isOpened)
             {
+                mainCameraGo.SetActive(false);
+                inventoryCamera.SetActive(true);
                 UIBG.SetActive(true);
+                globalInventoryPanel.gameObject.SetActive(true);
+                _vMeleeCombatInput.GetComponent<vMeleeCombatInput>().enabled = false;
+
                 inventoryPanel.gameObject.SetActive(true);
                 Cursor.lockState = CursorLockMode.None;
                 Cursor.visible = true;
@@ -52,7 +63,11 @@ public class InventoryManager : MonoBehaviour
             }
             else
             {
+                mainCameraGo.SetActive(true);
+                inventoryCamera.SetActive(false);
                 UIBG.SetActive(false);
+                globalInventoryPanel.gameObject.SetActive(false);
+                _vMeleeCombatInput.GetComponent<vMeleeCombatInput>().enabled = true;
                 inventoryPanel.gameObject.SetActive(false);
                 Cursor.lockState = CursorLockMode.Locked;
                 Cursor.visible = false;
