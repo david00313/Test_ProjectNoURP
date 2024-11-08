@@ -16,7 +16,6 @@ public class PlayerManager : MonoBehaviour
     {
         instance = this;
         Invoke("AxeAnimInitDelay", 0.5f);
-        Invoke("PlayerDied", 5.5f);
 
     }
 
